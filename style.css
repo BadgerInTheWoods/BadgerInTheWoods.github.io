@@ -329,11 +329,18 @@ h2{
     flex-direction: column;
     width: 360px;
     height: 590px;
+    overflow: hidden;
+    position: relative;
 }
 
 .imgtype2{
     width: 360px;
     height: 420px;
+    position: relative;
+}
+
+.imgtype2 img {
+    object-fit: cover; /* Keeps the image aspect ratio */
 }
 
 .img1{
@@ -361,21 +368,24 @@ h2{
 }
 
 .imgtype2:hover .imgtype2_shade{
-    display: flex;
+    opacity: 1;
     
 }
 
 .imgtype2_shade{
-    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black shade */
+    display: flex;
     justify-content: center;
     align-items: center;
-    color: #F8F8F8;
-    background-color: #211616B2;
-    width: 360px;
-    height: 420px;
-
-
+    opacity: 0; /* Hidden initially */
+    transition: opacity 0.3s ease;
 }
+
 .addtocartbtn{
     display: flex;
     flex-direction: row;
@@ -384,6 +394,10 @@ h2{
     gap: 10px;
     justify-content: center;
     align-items: center;
+}
+
+.addtocartbtntext{
+    color: white;
 }
 
 .boxes2{
